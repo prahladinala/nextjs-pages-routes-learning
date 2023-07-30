@@ -11,9 +11,9 @@ function products() {
             <Navbar />
             <header className=' py-3'>
                 <div className="text-center">
-                <h1 className='text-3xl py-2'>Products of ToolMate</h1>
+                    <h1 className='text-3xl py-2'>Products of ToolMate</h1>
                 </div>
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {data.map((item) => (
                         <div className="w-[300px] rounded-md border bg-white">
                             <img
@@ -29,6 +29,9 @@ function products() {
                                 </p>
                                 <div className="mt-4">
                                     <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
+                                        {item.brand}
+                                    </span>
+                                    <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
                                         #{item.category}
                                     </span>
                                     <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
@@ -40,13 +43,13 @@ function products() {
                                     <span className='line-through'>₹{item.actualPrice}</span> &nbsp;
                                     ₹{item.discountPrice}
                                 </h1>
-                                <Link href={"products/"+(item.id).toString()}>
-                                <button
-                                    type="button"
-                                    className="mt-4 rounded-sm bg-black px-3 py-1 text-[10px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                                >
-                                    View Details
-                                </button>
+                                <Link href={"products/" + (item.id)}>
+                                    <button
+                                        type="button"
+                                        className="mt-4 rounded-sm bg-black px-3 py-1 text-[10px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                                    >
+                                        View Details
+                                    </button>
                                 </Link>
                             </div>
                         </div>
